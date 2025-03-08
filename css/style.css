@@ -1,0 +1,1044 @@
+/* Importa la fuente 'Poppins' desde Google Fonts con varios estilos y pesos */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Estilos globales aplicados a todos los elementos */
+* {
+    margin: 0; /* Quita márgenes predeterminados */
+    padding: 0; /* Quita relleno predeterminado */
+    box-sizing: border-box; /* Incluye bordes y padding en el tamaño total */
+    text-decoration: none; /* Quita subrayados de enlaces */
+    font-family: 'Poppins', sans-serif; /* Aplica la fuente 'Poppins' a todo el documento */
+}
+
+/* Variables de colores y tamaño de fuente definidas en :root para fácil acceso */
+/* 
+1. #f2b28e
+2. #fb6f00
+3. #b6d7e0
+4. #57cfdf
+5. #008da1 
+*/
+
+:root {
+    --color_text-primary: #fb6f00; /* Verde primario */
+    --color_text-secundary: #008da1; /* Azul oscuro */
+    --color_text-tertiary: #000000; /* Verde oscuro */
+    --lowText_font_size: 16px; /* Tamaño de fuente base */
+    --main_color-primary: #fb6f00; /* Define el color primario del tema, utilizado para elementos destacados y acentos */
+	--main_color-secundary: #f2b28e; /* Define el color secundario, que puede ser usado para elementos secundarios o complementarios */
+	--background-color: #b6d7e0; /* Establece el color de fondo general para el diseño, proporcionando un tono claro y suave */
+	--text_size_title: 40px; /* Define el tamaño de fuente para los títulos principales, asegurando que sean prominentes */
+	--text_title_card: 24px; /* Establece el tamaño de fuente para los títulos de tarjetas, permitiendo diferenciación en el contenido */
+	--text_title_cardv2: 20px; /* Define un tamaño de fuente alternativo para otro tipo de títulos de tarjetas, proporcionando flexibilidad en el diseño */
+	--text_paragraph: 16px; /* Establece el tamaño de fuente para el texto de párrafo, asegurando que sea legible y cómodo de leer */
+	--box_shadow-primary: 0px 6px 50px -20px rgba(0,0,0,0.2); /* Define un efecto de sombra para los elementos, proporcionando profundidad y separación visual */
+}
+
+/* Header */
+header {
+    width: 100%; /* Ancho completo */
+    height: 100px; /* Altura fija */
+    position: fixed; /* Fijo en la parte superior de la pantalla */
+    z-index: 100; /* Prioridad alta para superponer elementos */
+    background: #fb6f00; /* Color de fondo verde */
+}
+
+/* Contenedor principal del encabezado */
+.container_header {
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    height: 100%; /* Altura completa del encabezado */
+    margin: auto; /* Centra horizontalmente */
+    display: flex; /* Usa flexbox para alinear elementos */
+    justify-content: space-between; /* Espacia elementos entre los extremos */
+    align-items: center; /* Alinea elementos verticalmente al centro */
+    padding: 0px 20px; /* Relleno lateral de 20px */
+}
+
+/* Estilo del logo */
+.logo {
+    display: flex; /* Usa flexbox para alinear elementos hijos */
+    align-items: center; /* Alinea verticalmente al centro */
+    position: relative; /* Posicionamiento relativo para ajustes si es necesario */
+    z-index: 1; /* Asegura que esté sobre otros elementos */
+}
+
+/* Estilo de la imagen del logo */
+.logo img {
+    width: 100px; /* Ancho fijo de la imagen del logo */
+}
+
+/* Contenedor del menú principal */
+.menu {
+    display: flex; /* Usa flexbox para alinear elementos en fila */
+    align-items: center; /* Alinea verticalmente al centro */
+}
+
+/* Estilo del contenedor de navegación dentro del menú */
+.menu nav {
+    margin: 0px 20px; /* Márgenes horizontales de 20px */
+}
+
+/* Estilo de la lista de navegación */
+.menu nav ul {
+    display: flex; /* Flexbox para alinear enlaces horizontalmente */
+}
+
+/* Estilo de cada elemento de la lista de navegación */
+.menu nav ul li {
+    list-style: none; /* Quita los puntos de lista */
+    margin: 20px 16px; /* Márgenes alrededor de cada elemento */
+}
+
+/* Estilo de los enlaces dentro de la lista de navegación */
+.menu nav ul li a {
+    color: black; /* Color del texto de los enlaces (puede ser var(--color_text-secundary)) */
+    font-size: 16px; /* Tamaño de fuente (puede ser var(--lowText_font_size)) */
+    position: relative; /* Posicionamiento relativo para efectos */
+}
+
+/* Efecto hover sobre los enlaces del menú */
+.menu nav ul li a:hover {
+    color: #fb6f00; /* Cambia el color al verde primario en hover */
+}
+
+/* Botón de llamada a la acción (cita, contacto, etc.) */
+.btn_quote {
+    display: block; /* Muestra el botón como un bloque */
+    padding: 8px 40px; /* Relleno interno */
+    border: 2px solid #b6d7e0; /* Borde verde primario */
+    border-radius: 8px; /* Bordes redondeados */
+    font-weight: 500; /* Peso de fuente medio */
+    color: white; /* Texto de color verde oscuro */
+    margin: 0px 20px; /* Margen horizontal */
+    transition: all 300ms; /* Transición suave para efectos de hover */
+}
+
+/* Efecto hover sobre el botón */
+.btn_quote:hover {
+    color: #000000; /* Cambia el color del texto a blanco */
+    background: #b6d7e0; /* Fondo verde primario */
+}
+
+/* Estilos para el mensaje de cotización */
+.cotization-message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #b6d7e0; /* Color verde */
+    color: #fb6f00;
+    font-size: 18px;
+    padding: 15px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards, fadeOut 0.5s forwards 4.5s; /* Animación */
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* Animación de desaparición */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+}
+
+/* Estilo del contenedor de redes sociales en el menú */
+.menu .socialMedia {
+    margin: 0px 10px; /* Márgenes laterales */
+}
+
+/* Estilo de los enlaces de redes sociales */
+.menu .socialMedia a {
+    margin: 0px 4px; /* Espacio entre los enlaces de redes sociales */
+}
+
+/* Estilo de las imágenes de redes sociales */
+.menu .socialMedia img {
+    width: 20px; /* Ancho fijo de 20px para los iconos */
+}
+
+/* End Header */
+
+
+/*Slider*/
+
+.container__slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    background-color: #b6d7e0;
+    display: flex; /* Asegura que el slider ocupe toda la altura */
+    align-items: center;
+    justify-content: center;
+}
+
+.slider {
+    display: flex;
+    width: 100%;
+    height: 100%; /* Asegura que las diapositivas ocupen todo el espacio */
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    display: flex;
+    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    flex-shrink: 0; /* Asegura que cada diapositiva tenga el tamaño completo */
+    width: 100%;
+    height: 100%; /* Asegura que cada slide ocupe toda la pantalla */
+}
+
+.cover__slider {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos uno debajo del otro */
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+    text-align: center; /* Centra el texto */
+    width: 100%; /* Asegura que el contenido ocupe el espacio disponible */
+    padding: 20px; /* Espaciado interno */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+    margin-top: 100px;
+}
+
+.text__slider h1 {
+    font-size: 3rem; /* Ajusta el tamaño del título */
+    margin-bottom: 20px;
+    color: var(--color_text-secundary);
+}
+
+.text__slider p {
+    font-size: 1.2rem;
+    color: var(--color_text-tertiary);
+    margin-bottom: 30px;
+}
+
+.image__slider img {
+    max-width: 100%;
+    height: auto;
+    max-height: 50vh; /* Asegura que la imagen no exceda la mitad de la pantalla */
+    object-fit: contain; /* Escala la imagen sin distorsión */
+    margin-top: 20px; /* Espaciado entre el texto y la imagen */
+}
+
+.slider__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--main_color-primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s;
+}
+
+.slider__btn:hover {
+    background: #008da1;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/*End Slider*/
+
+/* Estilos Generales Cards */
+
+#imagen-edit {
+    width: 230px;
+}
+
+.container__card-primary { /* Estilo para el contenedor principal de la sección de tarjetas */
+    padding-top: 100px; /* Añade un espacio de 100px en la parte superior */
+}
+
+.card__primary { /* Estilo para la sección que agrupa las tarjetas */
+    max-width: 1200px; /* Define un ancho máximo de 1200px para mantener el contenido centrado */
+    margin: auto; /* Centra el contenedor horizontalmente */
+    text-align: center; /* Centra el texto dentro del contenedor */
+    padding: 0px 20px; /* Añade un padding lateral de 20px */
+}
+
+.text__card-primary { /* Estilo para la sección de texto dentro de las tarjetas */
+    max-width: 800px; /* Limita el ancho máximo a 800px */
+    margin: auto; /* Centra el texto horizontalmente */
+}
+
+.text__card-primary p { /* Estilo para los párrafos dentro de la sección de texto de las tarjetas */
+    color: var(--color_text-primary); /* Establece el color del texto usando la variable primaria definida */
+    letter-spacing: 4px; /* Añade un espacio entre letras de 4px */
+    font-size: var(--text_paragraph); /* Define el tamaño de fuente usando la variable para párrafos */
+    font-weight: 500; /* Aplica un peso medio al texto */
+}
+
+.text__card-primary h1 { /* Estilo para el encabezado h1 dentro de la sección de texto */
+    font-size: var(--text_size_title); /* Define el tamaño de fuente usando la variable para títulos */
+    font-weight: 600; /* Aplica un peso de fuente más grueso para el título */
+    color: var(--color_text-secundary); /* Establece el color del texto usando la variable secundaria */
+}
+
+.container__box-cardPrimary { /* Estilo para el contenedor que agrupa las cajas de tarjetas */
+    display: flex; /* Activa el modelo flexbox para organizar las tarjetas */
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten a múltiples líneas si es necesario */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    margin-top: 40px; /* Añade un margen superior de 40px para separación del contenido anterior */
+}
+
+.box__card-primary { /* Estilo para cada tarjeta individual */
+    max-width: 350px; /* Limita el ancho máximo a 350px */
+    padding: 60px 40px; /* Añade un padding de 60px en vertical y 40px en horizontal */
+    border: 1px solid #e6e6e6; /* Aplica un borde de 1px de color gris claro */
+    border-radius: 20px; /* Redondea las esquinas de la tarjeta con un radio de 20px */
+    margin: 14px; /* Añade un margen de 14px alrededor de cada tarjeta */
+    transition: all 300ms; /* Aplica una transición suave para todos los cambios de estilo en 300ms */
+}
+
+.box__card-primary:hover { /* Estilo para cada tarjeta al pasar el mouse por encima */
+    border: 1px solid transparent; /* Cambia el borde a transparente */
+    box-shadow: var(--box_shadow-primary); /* Aplica una sombra al pasar el mouse usando la variable de sombra primaria */
+}
+
+.box__card-primary h2 { /* Estilo para el encabezado h2 dentro de cada tarjeta */
+    font-size: var(--text_title_card); /* Define el tamaño de fuente usando la variable para títulos de tarjeta */
+    margin-top: 40px; /* Añade un margen superior de 40px para separación del contenido anterior */
+    font-weight: 500; /* Aplica un peso medio al texto */
+}
+
+.box__card-primary p { /* Estilo para los párrafos dentro de cada tarjeta */
+    margin-top: 20px; /* Añade un margen superior de 20px para separación del contenido anterior */
+}
+
+/* End Estilos Generales Cards */
+
+/* Sobre Nosotros */
+
+.container__about { /* Estilo para el contenedor principal de la sección Sobre Nosotros */
+    padding: 100px 0px; /* Añade un padding de 100px arriba y abajo */
+    background: var(--background-color); /* Define el color de fondo usando la variable de fondo */
+    margin-top: 100px; /* Añade un margen superior de 100px para separación del contenido anterior */
+}
+
+.about { /* Estilo para el contenedor que agrupa el contenido de Sobre Nosotros */
+    max-width: 1200px; /* Limita el ancho máximo a 1200px */
+    margin: auto; /* Centra el contenedor horizontalmente */
+    padding: 0px 20px; /* Añade un padding lateral de 20px */
+    display: flex; /* Activa el modelo flexbox para organizar los elementos */
+    align-items: center; /* Alinea los elementos verticalmente al centro */
+    justify-content: center; /* Centra los elementos horizontalmente */
+}
+
+.text__about { /* Estilo para la sección de texto dentro de Sobre Nosotros */
+    width: 100%; /* Permite que el texto ocupe el 100% del ancho del contenedor */
+    padding-right: 40px; /* Añade un padding a la derecha de 40px para separación de otros elementos */
+}
+
+.text__about h1 { /* Estilo para el encabezado h1 dentro de la sección de texto */
+    color: var(--color_text-secundary); /* Establece el color del texto usando la variable secundaria */
+    font-weight: 600; /* Aplica un peso de fuente más grueso para el título */
+}
+
+.text__about p { /* Estilo para los párrafos dentro de la sección de texto */
+    font-size: var(--text_paragraph); /* Define el tamaño de fuente usando la variable para párrafos */
+    margin-top: 40px; /* Añade un margen superior de 40px para separación del contenido anterior */
+    color: var(--color_text-tertiary); /* Establece el color del texto usando la variable terciaria */
+}
+
+.image__about { /* Estilo para la sección de imagen dentro de Sobre Nosotros */
+    width: 100%; /* Permite que la imagen ocupe el 100% del ancho del contenedor */
+    display: flex; /* Activa el modelo flexbox para organizar las imágenes */
+}
+
+.image__about img { /* Estilo para las imágenes dentro de la sección de imagen */
+    width: 300px; /* Define un ancho fijo de 300px para la imagen */
+}
+
+/*End Sobre Nosotros*/
+
+/* Equipo */
+
+.container_team{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color:white;
+}
+
+.team{
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 0px 20px;
+}
+
+.text_team{
+    max-width: 800px;
+    margin: auto;
+}
+
+.text_team p{
+    color: var(--color_text-primary);
+    letter-spacing: 4px;
+    font-size: var(--color_text-font);
+    font-weight: 500;
+    text-align: center;
+}
+.text_team h1{
+    text-align: center;
+    font-size: 28px;
+}
+
+.container_box_team{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra las cajas de equipo en el contenedor */
+    gap: 50px; /* Espaciado entre cada caja de equipo */
+    margin-top: 40px;
+    text-align: center;
+}
+
+.box_team {
+    width: 300px; /* Ajusta el ancho de cada caja de equipo */
+    text-align: center;
+}
+
+.container_box_team img{
+    height: 350px;
+    width: 100%; /* Ajusta la imagen al ancho de la caja */
+    object-fit: cover; /* Asegura que la imagen se ajuste sin distorsión */
+    border-radius: 20px;
+}
+
+.container_box_team img:hover{
+    transform: scale(1.05);
+}
+
+/* End Equipo */
+
+/* Galería */
+
+.container_projects {
+    padding: 100px 0px; /* Añade un padding de 100px arriba y abajo */
+    background: var(--background-color); /* Define el color de fondo usando la variable de fondo */
+    margin-top: 100px; /* Añade un margen superior de 100px para separación del contenido anterior */
+}
+
+.projects {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 0px 20px;
+}
+
+.text_projects {
+    max-width: 800px;
+    margin: auto;
+    padding: 40px;
+}
+
+.text_projects p {
+    color: var(--color_text-primary);
+    letter-spacing: 4px;
+    font-size: var(--color_text-font);
+    font-weight: 500;
+    text-align: center;
+}
+
+.text_projects h1 {
+    text-align: center;
+    font-size: 28px;
+}
+
+/* Contenedor de Proyectos */
+.container_box_projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* Oculta todos los proyectos por defecto */
+.box_projects {
+    display: none;
+}
+
+/* Estilos de Imágenes en Proyectos */
+.img_projects {
+    height: 350px;
+    width: 350px; /* Ajusta la imagen al ancho de la caja */
+    border-radius: 5px;
+    display: block;
+}
+
+.box_projects:hover .img_projects {
+    transform: scale(1.05); /* Efecto de zoom */
+}
+
+/* Texto sobre la Imagen */
+.texto-en-imagen {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: rgba(166, 130, 109, 0.6);
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+/* End Galería */
+
+/* Formulario De Contacto */
+
+.contact-form{
+    display: flex;
+    flex-direction: column;
+}
+.cover{
+    margin-top: 10px;
+    
+}
+.contact-form h2{
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 5px;
+}
+
+.contact-form  {
+    background: var(--main_color-secundary);
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 700px; /* Aumenta el ancho máximo del formulario */
+}
+
+.contact-form input{
+    margin-bottom: 20px;
+    box-shadow: #A6826D;
+}
+.message{
+    margin-top: 20px ;
+}
+
+.contact-form label{
+    font-size: 15px;
+}
+.contact-form input, .contact-form select, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--color_text-primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: white;
+    color: #0D0D0D;
+}
+
+#massage{
+    height: 200px;
+}
+
+/* End Formulario De Contacto */
+
+/* Mapa */
+
+.map-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.mapa {
+    width: 100%;
+    height: 500px; /* Asegura que el iframe ocupe toda la pantalla */
+    border: 0; /* Elimina el borde del mapa */
+    padding: 0;
+}
+
+/* End Mapa */
+
+/* Footer */
+.footer{
+    width: 100%;
+    background-color: #fb6f00;
+    padding: 0;
+    margin: 0;
+}
+
+.footer .box_footer-primary{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 50px;
+    padding: 45px 0px;
+    justify-items: center;
+}
+.box{
+    text-align: center;
+}
+.footer .box{
+    margin: 0;
+    width: 100%;
+}
+.footer .box_footer-primary p{
+    font-size: 14px;
+}
+
+.footer .box_footer-primary .socialMediaFooter ul a{
+    display: inline-block;
+}
+
+.nav ul{
+    list-style-type: none;
+    padding: 0;
+    gap: 15px;
+}
+
+.nav ul a{
+    color: #0D0D0D;
+    font-weight:500;
+    transition: all 300ms ease;
+}
+
+.nav ul a:hover{
+    color: var(--main_color-primary);
+}
+
+.contactos{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contactos a{
+    display: flex;
+    align-items: center;
+}
+
+.contactos img{
+    margin-right: 10px;
+    transition: all 300ms ease;
+}
+
+.contactos img:hover{
+    transform: scale(1.2);
+}
+.contactos a p{
+    color: #0D0D0D;
+}
+
+.socialMediaFooter a {
+    display: block; 
+    margin-bottom: 10px; 
+    margin-right: 10px;
+}
+
+.socialMediaFooter img {
+    width: 24px; 
+    height: auto;
+    margin-right: 10px;
+    transition: all 300ms ease;
+}
+
+.socialMediaFooter img:hover{
+    transform: scale(1.2);
+}
+
+.footer .box_footer-secundary{
+    background-color: #008da1;
+    text-align: center;
+    padding: 15px 10px;
+    color: rgb(255, 255, 255, 0.9);
+    margin-bottom: 0;
+}
+
+/* End Footer */
+
+/* Estilos responsivos */
+@media (max-width: 992px) {
+    .footer .box_footer-primary {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px;
+        padding: 30px 0;
+    }
+
+    .socialMediaFooter img {
+        width: 20px; /* Reduce el tamaño de los íconos en dispositivos medianos */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer .box_footer-primary {
+        grid-template-columns: 1fr;
+        padding: 20px 0;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav ul a {
+        font-size: 14px; /* Ajusta el tamaño de texto en dispositivos pequeños */
+    }
+
+    .contactos {
+        gap: 15px; /* Reduce el espacio entre contactos en pantallas pequeñas */
+    }
+
+    .socialMediaFooter img {
+        width: 18px; /* Tamaño aún más pequeño para íconos en dispositivos móviles */
+    }
+}
+
+@media (max-width: 576px) {
+    .footer .box_footer-primary {
+        padding: 15px 0;
+    }
+
+    .footer .box_footer-primary p {
+        font-size: 12px; /* Texto más pequeño en dispositivos muy pequeños */
+    }
+	
+	.contactos {
+        align-items: center;
+    }
+
+    .contactos a p {
+        font-size: 12px; /* Texto de contactos reducido para pantallas pequeñas */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media Queries */
+
+/* Pantallas pequeñas (hasta 768px) */
+@media (max-width: 768px) { /* Establece estilos específicos para dispositivos con un ancho máximo de 768px */
+    .container_header {
+        flex-wrap: wrap; /* Permite que los elementos dentro del contenedor se distribuyan en varias filas cuando no caben en una sola línea horizontal */
+		padding: 10px; /* Añade un espacio de 10px alrededor de todos los lados del contenedor */
+		height: auto; /* Ajusta la altura automáticamente según el contenido para que no haya espacios vacíos */
+        min-height: 200px; /* Añade una altura mínima para asegurar que haya suficiente espacio visible */
+		background: #41dd41; /* Color de fondo verde para el contenedor del encabezado */
+    }
+
+    /* Logo alineado a la izquierda */
+    .logo {
+        margin-right: 20px; /* Añade un margen a la derecha del logo para separarlo del siguiente elemento */
+    }
+
+    /* Menú en una fila horizontal con flex-wrap */
+    .menu {
+        display: flex; /* Establece el contenedor del menú como un flexbox */
+        flex-direction: row; /* Organiza los elementos hijos en una fila horizontal */
+        flex-wrap: wrap; /* Permite que los elementos se acomoden en una nueva fila cuando no caben en la fila actual */
+        gap: 10px; /* Añade un espacio de 10px entre los elementos del menú */
+        flex: 1; /* Permite que el menú ocupe el espacio restante disponible dentro del contenedor */
+    }
+
+    .menu nav ul {
+        display: flex; /* Establece el menú de navegación como un flexbox */
+        flex-direction: row; /* Organiza los elementos de la lista en una fila horizontal */
+        gap: 10px; /* Añade un espacio de 10px entre los elementos de la lista */
+        flex-wrap: wrap; /* Permite que los elementos de la lista se acomoden en una nueva fila cuando no caben */
+        flex: 2; /* Permite que el menú ocupe el doble del espacio en comparación con otros elementos flexibles */
+        justify-content: flex-start; /* Alinea los elementos de la lista al principio del contenedor */
+    }
+
+    /* Botón alineado horizontalmente con el menú */
+    .btn_quote {
+        margin-left: 10px; /* Añade un margen a la izquierda del botón para separarlo del menú */
+        flex-shrink: 0; /* Evita que el botón se reduzca en tamaño cuando el contenedor se ajusta */
+    }
+
+    /* Redes sociales al final, alineadas horizontalmente */
+    .socialMedia {
+        display: flex; /* Establece el contenedor de redes sociales como un flexbox */
+        gap: 8px; /* Añade un espacio de 8px entre los íconos de redes sociales */
+        margin-left: auto; /* Empuja el contenedor de redes sociales hacia la derecha del contenedor */
+        flex-shrink: 0; /* Evita que el contenedor de redes sociales se reduzca en tamaño cuando el contenedor se ajusta */
+    }
+}
+
+
+
+
+
+
+/* Dispositivos móviles pequeños (hasta 480px) */
+@media (max-width: 480px) { /* Establece estilos específicos para dispositivos con un ancho máximo de 480px */
+    header {
+        height: 80px; /* Reduce la altura del header para adaptarse mejor a pantallas pequeñas */
+    }
+    .container_header {
+        padding: 0 10px; /* Ajusta el padding lateral del contenedor del encabezado a 10px */
+    }
+    .logo img {
+        width: 70px; /* Ajusta el tamaño del logo a 70px de ancho para que se vea proporcional en dispositivos pequeños */
+    }
+    .menu nav ul {
+        padding: 0; /* Elimina el padding en la lista de navegación para que ocupe menos espacio */
+    }
+    .menu nav ul li a {
+        font-size: 14px; /* Reduce el tamaño de la fuente de los enlaces a 14px para mejorar la legibilidad en pantallas pequeñas */
+    }
+    .btn_quote {
+        padding: 6px 16px; /* Ajusta el padding del botón para que se vea bien en pantallas pequeñas */
+        margin: 10px 0; /* Establece un margen vertical de 10px para separar el botón de otros elementos */
+        font-size: 14px; /* Reduce el tamaño de la fuente del botón a 14px para que se ajuste mejor al diseño */
+    }
+    .menu .socialMedia img {
+        width: 16px; /* Reduce el tamaño de los iconos de redes sociales a 16px para que sean más pequeños y no saturen la vista */
+    }
+}
+
+/* Pantallas medianas (768px a 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) { /* Establece estilos específicos para dispositivos con un ancho entre 768px y 1024px */
+    .container_header {
+        max-width: 1000px; /* Establece un ancho máximo de 1000px para el contenedor del encabezado */
+        padding: 0 20px; /* Aplica un padding lateral de 20px para mantener espacio en los lados */
+    }
+    .menu nav ul li {
+        margin: 10px; /* Ajusta el margen de los elementos del menú a 10px para separar los elementos entre sí */
+    }
+    .btn_quote {
+        padding: 8px 30px; /* Ajusta el padding del botón a 8px verticalmente y 30px horizontalmente para un mejor aspecto */
+    }
+}
+
+/* Media query para pantallas pequeñas (hasta 480px) */
+@media (max-width: 480px) {
+    .container__cover {
+        padding-top: 50px; /* Reduce el padding superior a 50px */
+        padding-bottom: 50px; /* Reduce el padding inferior a 50px */
+    }
+    .cover {
+        flex-direction: column; /* Cambia la dirección del flex a columna para apilar elementos */
+        margin-top: 50px; /* Reduce el margen superior a 50px */
+        padding: 0 10px; /* Reduce el padding lateral a 10px */
+    }
+    .text__cover {
+        padding-right: 0; /* Elimina el padding a la derecha */
+        text-align: center; /* Centra el texto */
+    }
+    .text__cover h1 {
+        font-size: 30px; /* Ajusta el tamaño del texto del encabezado */
+        margin-bottom: 20px; /* Añade un margen inferior para separación */
+    }
+    .text__cover p {
+        font-size: 14px; /* Reduce el tamaño del párrafo */
+    }
+    .btn__text {
+        width: 100%; /* Hace que el botón ocupe el 100% del ancho */
+    }
+    .image__cover img {
+        width: 100%; /* Hace que la imagen ocupe el 100% del ancho */
+        max-width: 300px; /* Establece un ancho máximo de 300px para la imagen */
+        margin-bottom: 20px; /* Añade un margen inferior entre la imagen y el botón */
+    }
+}
+
+/* Media query para pantallas medianas (de 481px a 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+    .container__cover {
+        padding-top: 80px; /* Reduce el padding superior a 80px */
+        padding-bottom: 80px; /* Reduce el padding inferior a 80px */
+    }
+    .cover {
+        flex-direction: column; /* Cambia la dirección del flex a columna para apilar elementos */
+        margin-top: 80px; /* Reduce el margen superior a 80px */
+        padding: 0 15px; /* Ajusta el padding lateral a 15px */
+    }
+    .text__cover h1 {
+        font-size: 40px; /* Reduce el tamaño del texto del encabezado */
+    }
+    .text__cover p {
+        font-size: 15px; /* Reduce el tamaño del párrafo */
+    }
+    .btn__text {
+        width: 100%; /* Hace que el botón ocupe el 100% del ancho */
+    }
+    .image__cover img {
+        width: 100%; /* Hace que la imagen ocupe el 100% del ancho */
+        max-width: 400px; /* Establece un ancho máximo de 400px para la imagen */
+    }
+}
+
+/* Media query para pantallas grandes (de 768px a 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container__cover {
+        padding-top: 90px; /* Reduce el padding superior a 90px */
+        padding-bottom: 90px; /* Reduce el padding inferior a 90px */
+    }
+    .cover {
+        margin-top: 90px; /* Reduce el margen superior a 90px */
+        padding: 0 20px; /* Mantiene el padding lateral de 20px */
+    }
+    .text__cover h1 {
+        font-size: 45px; /* Ajusta el tamaño del texto del encabezado */
+    }
+    .text__cover p {
+        font-size: 16px; /* Ajusta el tamaño del párrafo */
+    }
+    .btn__text {
+        width: auto; /* Restaura el ancho automático del botón */
+    }
+    .image__cover img {
+        width: 100%; /* Hace que la imagen ocupe el 100% del ancho */
+        max-width: 550px; /* Mantiene el ancho máximo de 550px para la imagen */
+    }
+}
+
+/* Media query para pantallas muy grandes (más de 1024px) */
+@media (min-width: 1025px) {
+    .container__cover {
+        padding-top: 100px; /* Mantiene el padding superior de 100px */
+        padding-bottom: 100px; /* Mantiene el padding inferior de 100px */
+    }
+    .cover {
+        max-width: 1200px; /* Mantiene el ancho máximo de 1200px */
+        margin-top: 100px; /* Mantiene el margen superior de 100px */
+    }
+    .text__cover {
+        padding-right: 150px; /* Mantiene el padding a la derecha */
+    }
+    .text__cover h1 {
+        font-size: 50px; /* Mantiene el tamaño del texto del encabezado */
+    }
+    .text__cover p {
+        font-size: var(--text_paragraph); /* Mantiene el tamaño del párrafo */
+    }
+    .btn__text {
+        width: 150px; /* Mantiene el ancho fijo del botón */
+    }
+    .image__cover img {
+        width: 550px; /* Mantiene el ancho fijo de la imagen */
+    }
+}
+
+/* Media Query para pantallas de tamaño mediano (tabletas) */
+@media (max-width: 1024px) {
+    .container__about {
+        padding: 80px 0; /* Reduce el padding superior e inferior */
+        margin-top: 80px; /* Reduce el margen superior */
+    }
+
+    .about {
+        max-width: 90%; /* Ajusta el ancho máximo para adaptarse mejor a la pantalla */
+        padding: 0 15px; /* Reduce el padding lateral */
+        flex-direction: column; /* Cambia a diseño de columna en lugar de fila */
+        text-align: center; /* Centra el texto para mejor legibilidad */
+    }
+
+    .text__about {
+        padding-right: 0; /* Elimina el padding a la derecha para centrar el contenido */
+        margin-bottom: 20px; /* Añade espacio inferior para separar del contenido siguiente */
+    }
+
+    .image__about img {
+        width: 250px; /* Reduce el ancho de la imagen */
+    }
+}
+
+/* Media Query para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .container__about {
+        padding: 60px 0; /* Reduce aún más el padding superior e inferior */
+        margin-top: 60px; /* Reduce el margen superior */
+    }
+
+    .about {
+        max-width: 100%; /* Usa el 100% del ancho disponible */
+        padding: 0 10px; /* Reduce el padding lateral */
+    }
+
+    .text__about p {
+        font-size: calc(var(--text_paragraph) * 0.9); /* Reduce el tamaño de fuente del párrafo */
+        margin-top: 20px; /* Reduce el margen superior */
+    }
+
+    .image__about img {
+        width: 200px; /* Reduce el ancho de la imagen */
+    }
+}
+
+/* Media Query para pantallas extra pequeñas (teléfonos de tamaño reducido) */
+@media (max-width: 480px) {
+    .container__about {
+        padding: 40px 0; /* Reduce aún más el padding superior e inferior */
+        margin-top: 40px; /* Reduce el margen superior */
+    }
+
+    .text__about h1 {
+        font-size: calc(var(--text_size_title) * 0.8); /* Reduce el tamaño de fuente del encabezado h1 */
+    }
+
+    .text__about p {
+        font-size: calc(var(--text_paragraph) * 0.8); /* Reduce el tamaño de fuente del párrafo */
+    }
+
+    .image__about img {
+        width: 150px; /* Reduce el ancho de la imagen */
+    }
+}
+
